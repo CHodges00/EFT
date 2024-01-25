@@ -1,0 +1,22 @@
+<div class="search-container">
+  <form class="search-form" (ngSubmit)="onSearch()">
+    <input
+      class="form-control"
+      name="search"
+      placeholder="Search"
+      [(ngModel)]="search"
+    />
+    <!-- Maybe on mobile -->
+    <!-- <button class="btn btn-primary" type="submit" [disabled]="isLoading">
+      Search
+    </button> -->
+    <div *ngIf="isLoading" class="loader-container">
+      <mat-progress-spinner
+        class="loader"
+        diameter="100"
+        mode="indeterminate"
+        color="primary"
+      ></mat-progress-spinner>
+    </div>
+  </form>
+</div>

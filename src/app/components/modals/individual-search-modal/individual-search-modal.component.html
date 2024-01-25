@@ -1,0 +1,39 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h1 class="modal-title">{{ item.name }}</h1>
+    <p class="modal-close" (click)="onNoClick()">X</p>
+  </div>
+  <div class="modal-body">
+    <div class="item-info">
+      <p class="info-label">Last Updated:</p>
+      <p [ngClass]="calculateTimeDifference(item.updated)">{{ formatDate(item.updated) }}</p>
+      <hr/>
+      <p class="info-label">Avg 24hr Price:</p>
+      <p class="info-value">{{ item.avg24hPrice | number }}</p>
+      <hr/>
+      <p class="info-label">Last 48hr Change:</p>
+      <p class="info-value" [ngClass]="{ 'text-danger': item.changeLast48h < 0, 'text-success': item.changeLast48h >= 0 }">{{ item.changeLast48h | number }}</p>
+      <hr/>
+      <h2>Needed For Tasks</h2>
+      <div *ngIf="item.usedInTasks.length > 0; else notUsed">
+        <div *ngFor="let task of item.usedInTasks" class="task-card">
+          <div class="task-details">
+            <p><span class="task-label">Task:</span> {{ task.name }}</p>
+            <p><span class="task-label">Trader:</span> {{ task.trader.name }}</p>
+            <p><span class="task-label">Min Level:</span> {{ task.minPlayerLevel }}</p>
+          </div>
+        </div>
+      </div>
+      <ng-template #notUsed>
+        <p class="text-danger">Not used in Tasks</p>
+      </ng-template>
+    </div>
+    <div class="item-image">
+      <img src="{{ item.inspectImageLink }}" />
+      <h2>Sell Prices</h2>
+      <div *ngFor="let sell of item.sellFor" class="sell-details">
+        <p [ngClass]="{ 'text-success': sell.price === highestPrice }">{{ sell.vendor.name }}: {{ sell.currency }} {{ sell.price | number }}</p>
+      </div>
+    </div>
+  </div>
+</div>

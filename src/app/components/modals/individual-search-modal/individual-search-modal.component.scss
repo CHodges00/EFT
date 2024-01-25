@@ -1,0 +1,105 @@
+.modal-content {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.modal-header {
+  background-color: #343a40;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 20px;
+}
+
+.modal-title {
+  font-size: 24px;
+}
+
+.modal-close {
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+}
+
+.item-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.info-label {
+  font-weight: bold;
+}
+
+.info-value {
+  margin-bottom: 10px;
+}
+
+.text-danger {
+  font-size: large;
+  font-weight: bold;
+  color: red;
+}
+
+.text-success {
+  font-size: large;
+  font-weight: bold;
+  color: green;
+}
+
+.item-image {
+  flex: 1;
+  padding: 20px;
+}
+
+.item-image img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.task-details {
+  margin-bottom: 20px;
+}
+
+.task-label {
+  font-weight: bold;
+}
+
+.sell-details {
+  margin-bottom: 10px;
+}
+
+.task-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task-details {
+  margin: 0;
+}
+
+.task-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.green-text {
+  color: green;
+}
+
+.yellow-text {
+  color: rgb(195, 195, 7);
+}
+
+.red-text {
+  color: red;
+}
