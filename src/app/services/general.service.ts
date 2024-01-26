@@ -39,7 +39,6 @@ export class GeneralService {
     });
   }
 
-  // Have take in text from search bar
   itemsListSearch(search:string){
     return this.apollo.watchQuery({
       query: gql`{
@@ -52,12 +51,10 @@ export class GeneralService {
   }
 
   inspectItemQuery(search: string) {
-    // Function to escape quotes within the search string
     const escapeQuotes = (str: string) => {
       return str.replace(/"/g, '\\"');
     };
 
-    // Escape quotes within the search string
     const sanitizedSearch = escapeQuotes(search);
 
     return this.apollo.watchQuery({
@@ -95,5 +92,18 @@ export class GeneralService {
   }
 
 
+  top5Sellers(){
+    return this.apollo.watchQuery({
+      query: gql`{
+        items {
+          name
+          inspectImageLink
+          avg24hPrice
+          updated
+          changeLast48h
+        }
+      }`
+    });
+  }
 
 }

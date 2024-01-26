@@ -28,5 +28,69 @@
   z-index: 1000;
 }
 
+.tops-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.tops {
+  display: flex;
+  flex-direction: column;
+  animation: slide-top infinite linear;
+}
+
+.top {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(20, 20, 20, 0.9);
+  border-radius: 5px;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+}
+
+.top-image {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.top-details {
+  flex-grow: 1;
+}
+
+.top p {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.top-name {
+  font-weight: bold;
+}
+
+.top-change {
+  font-style: italic;
+}
+
+.top-price {
+  font-weight: bold;
+}
 
 
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(35%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

@@ -1,3 +1,30 @@
+<div *ngIf="top5show" class="tops-container">
+  <div
+    class="tops"
+    [ngStyle]="{ 'animation-duration': top5show.length * 4 + 's' }"
+  >
+    <div class="top" *ngFor="let top of top5show">
+      <div class="top-content">
+        <img class="top-image" [src]="top.inspectImageLink" />
+        <div class="top-details">
+          <p class="top-name">{{ top.name }}</p>
+          <p
+            class="top-change"
+            [ngClass]="{
+              'text-danger': top.changeLast48h < 0,
+              'text-success': top.changeLast48h >= 0
+            }"
+          >
+            48hr Change: {{ top.changeLast48h| number }}
+          </p>
+          <p class="top-price">RUB {{ top.avg24hPrice | number }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="search-container">
   <form class="search-form" (ngSubmit)="onSearch()">
     <input
