@@ -15,6 +15,7 @@ import { SearchResultModal } from './components/modals/search-results-modal/sear
 import { MatIconModule } from '@angular/material/icon';
 import { IndividualSearchModal } from './components/modals/individual-search-modal/individual-search-modal.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FooterComponent,
     NotesComponent,
     SearchResultModal,
-    IndividualSearchModal
+    IndividualSearchModal,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
