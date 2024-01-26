@@ -1,48 +1,38 @@
-/* Modal title */
-.mat-dialog-title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-/* Modal content */
+.mat-dialog-title,
 .modal-content {
-  max-height: 400px; /* Set a maximum height for scrolling */
-  overflow-y: auto; /* Enable vertical scrolling */
-  padding: 10px;
+  background-color: #333;
 }
 
-/* Individual result item */
+.modal-content {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+}
+
 .modal-content button {
-  background-color: #f0f0f0; /* Add background color to differentiate from background */
-  border: 2px solid transparent; /* Set initial border color to transparent */
+  background-color: #444;
+  border: none;
   margin: 10px;
   padding: 10px;
   cursor: pointer;
   transition: transform 0.3s ease;
   border-radius: 5px;
-}
-
-/* Remove border from the first button */
-.modal-content button:first-child {
-  border: none;
+  width: calc(100% - 20px);
 }
 
 .modal-content button:hover {
   transform: translateY(-5px);
-  border: 2px solid;
-  border-color: #af0f0f; /* Change border color on hover */
+  box-shadow: 0 0 10px rgba(241, 3, 3, 0.808);
 }
 
-.modal-content button img {
-  width: 100px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+.modal-content {
+  scrollbar-width: none;
 }
 
-.modal-content button p {
-  text-align: center;
-  font-size: 16px;
-  margin: 0;
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+p{
+  color: #fff;
 }

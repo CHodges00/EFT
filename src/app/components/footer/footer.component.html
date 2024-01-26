@@ -1,34 +1,7 @@
-<!-- <nav class="navbar navbar-dark bg-dark">
-  <div class="container">
-    <div *ngIf="status" class="status-container">
-      <p class="text-white">Statuses: </p>
-      <ng-container *ngFor="let statusItem of status.status.currentStatuses">
-        <div class="status-item" *ngIf="
-        statusItem.name !== 'Forum' &&
-        statusItem.name !== 'Friends and msg.' &&
-        statusItem.name !== 'Website' &&
-        statusItem.name !== 'Authentication' &&
-        statusItem.name !== 'Inventory operations'
-      ">
-          <span class="badge bg-primary">{{ statusItem.name }}: {{ statusItem.status }}</span>
-        </div>
-      </ng-container>
-    </div>
-    <div *ngIf="maps" class="maps-container">
-      <p class="text-white">PMC Counts: </p>
-      <ng-container *ngFor="let map of maps.maps">
-        <div class="map-item" *ngIf="map.name !== 'Night Factory'">
-          <span class="badge bg-success">{{ map.name }}: {{ map.players }}</span>
-        </div>
-      </ng-container>
-    </div>
-  </div>
-</nav> -->
-
 <nav class="custom-navbar">
   <div class="container">
     <div *ngIf="status" class="status-container">
-      <p class="status-title">Server Statuses:</p>
+      <p class="status-title">Server Statuses</p>
       <div class="map-row">
         <ng-container *ngFor="let statusItem of status.status.currentStatuses">
           <ng-container *ngIf="
@@ -47,7 +20,7 @@
       </div>
     </div>
     <div *ngIf="maps" class="maps-container">
-      <p class="maps-title">PMC Counts:</p>
+      <p class="maps-title">PMC Counts</p>
       <div class="map-row">
         <ng-container *ngFor="let map of maps.maps">
           <ng-container *ngIf="map.name !== 'Night Factory'">

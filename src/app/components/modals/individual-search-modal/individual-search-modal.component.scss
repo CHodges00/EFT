@@ -1,13 +1,13 @@
 .modal-content {
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
+  background-color: #343a40;
+  border: 1px solid #6c757d;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
 }
 
 .modal-header {
-  background-color: #343a40;
+  background-color: #212529;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -18,78 +18,60 @@
 }
 
 .modal-title {
+  margin: auto;
   font-size: 24px;
-}
-
-.modal-close {
-  cursor: pointer;
 }
 
 .modal-body {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .item-info {
-  flex: 1;
+  flex: 1 1 40%;
   padding: 20px;
 }
 
-.info-label {
-  font-weight: bold;
+.item-info h2{
+  margin: auto;
+  text-align: center
+  ;
 }
 
-.info-value {
-  margin-bottom: 10px;
-}
-
-.text-danger {
-  font-size: large;
-  font-weight: bold;
-  color: red;
-}
-
-.text-success {
-  font-size: large;
-  font-weight: bold;
-  color: green;
-}
-
-.item-image {
-  flex: 1;
+.other-info {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  background-color: #454d55;
   padding: 20px;
-}
-
-.item-image img {
-  width: 100%;
   border-radius: 5px;
 }
 
-.task-details {
+.other-info .item-image {
   margin-bottom: 20px;
 }
 
-.task-label {
-  font-weight: bold;
+.item-image {
+  padding: 20px;
+  text-align: center;
 }
 
-.sell-details {
-  margin-bottom: 10px;
-}
-
-.task-card {
-  border: 1px solid #ccc;
+.item-image img {
+  max-width: 100%;
   border-radius: 5px;
-  padding: 10px;
+}
+
+.prices {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sell-prices, .buy-prices {
+  margin: 5px;
+}
+
+.sell-prices h2, .buy-prices h2 {
   margin-bottom: 10px;
-}
-
-.task-details {
-  margin: 0;
-}
-
-.task-label {
-  font-weight: bold;
-  margin-right: 5px;
 }
 
 .green-text {
@@ -102,4 +84,61 @@
 
 .red-text {
   color: red;
+}
+
+.tasks{
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 300px;
+  scrollbar-width: none;
+}
+
+.tasks::-webkit-scrollbar {
+  display: none;
+}
+
+.task-card {
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task-details {
+  margin: 0;
+}
+
+.task-label {
+  margin-right: 5px;
+}
+
+.best-price {
+  font-size: large;
+  font-weight: bold;
+  color: green;
+}
+
+.money-maker {
+  font-weight: bold;
+  margin: auto;
+  animation: colorChange 1s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    color: gold;
+  }
+  25% {
+    color: white;
+  }
+  50% {
+    color: gold;
+  }
+  75% {
+    color: white;
+  }
+  100% {
+    color: gold;
+  }
 }

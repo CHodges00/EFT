@@ -1,3 +1,4 @@
+import { BuyFor } from "./buyFor";
 import { SellFor } from "./sellFor";
 import { Task } from "./task";
 
@@ -9,4 +10,5 @@ export interface InspectItem {
   updated: string;
   changeLast48h: number;
   sellFor: SellFor[];
+  buyFor: BuyFor[];
 }

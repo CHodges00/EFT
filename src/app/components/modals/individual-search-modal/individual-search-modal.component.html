@@ -1,38 +1,68 @@
 <div class="modal-content">
   <div class="modal-header">
     <h1 class="modal-title">{{ item.name }}</h1>
-    <p class="modal-close" (click)="onNoClick()">X</p>
   </div>
   <div class="modal-body">
     <div class="item-info">
       <p class="info-label">Last Updated:</p>
-      <p [ngClass]="calculateTimeDifference(item.updated)">{{ formatDate(item.updated) }}</p>
-      <hr/>
+      <p [ngClass]="calculateTimeDifference(item.updated)">
+        {{ formatDate(item.updated) }}
+      </p>
+      <hr />
       <p class="info-label">Avg 24hr Price:</p>
-      <p class="info-value">{{ item.avg24hPrice | number }}</p>
-      <hr/>
+      <p class="info-value">RUB {{ item.avg24hPrice | number }}</p>
+      <hr />
       <p class="info-label">Last 48hr Change:</p>
-      <p class="info-value" [ngClass]="{ 'text-danger': item.changeLast48h < 0, 'text-success': item.changeLast48h >= 0 }">{{ item.changeLast48h | number }}</p>
-      <hr/>
-      <h2>Needed For Tasks</h2>
-      <div *ngIf="item.usedInTasks.length > 0; else notUsed">
+      <p
+        class="info-value"
+        [ngClass]="{
+          'text-danger': item.changeLast48h < 0,
+          'text-success': item.changeLast48h >= 0
+        }"
+      >
+        {{ item.changeLast48h | number }}
+      </p>
+      <hr />
+      <h2 *ngIf="usedInTasks" class="text-success">Needed For Tasks</h2>
+      <h2 *ngIf="!usedInTasks" class="text-danger">Not Needed For Tasks</h2>
+      <div class="tasks" *ngIf="usedInTasks">
         <div *ngFor="let task of item.usedInTasks" class="task-card">
           <div class="task-details">
             <p><span class="task-label">Task:</span> {{ task.name }}</p>
-            <p><span class="task-label">Trader:</span> {{ task.trader.name }}</p>
-            <p><span class="task-label">Min Level:</span> {{ task.minPlayerLevel }}</p>
+            <p>
+              <span class="task-label">Trader:</span> {{ task.trader.name }}
+            </p>
+            <p>
+              <span class="task-label">Min Level:</span>
+              {{ task.minPlayerLevel }}
+            </p>
           </div>
         </div>
       </div>
-      <ng-template #notUsed>
-        <p class="text-danger">Not used in Tasks</p>
-      </ng-template>
     </div>
-    <div class="item-image">
-      <img src="{{ item.inspectImageLink }}" />
-      <h2>Sell Prices</h2>
-      <div *ngFor="let sell of item.sellFor" class="sell-details">
-        <p [ngClass]="{ 'text-success': sell.price === highestPrice }">{{ sell.vendor.name }}: {{ sell.currency }} {{ sell.price | number }}</p>
+    <div class="other-info">
+      <h1 class="money-maker" *ngIf="isMoneyMaker">QUICK MONEY MAKER</h1>
+      <div class="item-image">
+        <img src="{{ item.inspectImageLink }}" />
+      </div>
+      <div class="prices">
+        <div class="sell-prices">
+          <h2>Sell Prices</h2>
+          <div *ngFor="let sell of item.sellFor" class="sell-details">
+            <p [ngClass]="{ 'best-price': sell.price === highestPrice }">
+              {{ sell.vendor.name === 'Flea Market' ? 'Flea' : sell.vendor.name }}: {{ sell.currency }}
+              {{ sell.price | number }}
+            </p>
+          </div>
+        </div>
+        <div class="buy-prices">
+          <h2>Buy Prices</h2>
+          <div *ngFor="let buy of item.buyFor" class="sell-details">
+            <p [ngClass]="{ 'best-price': buy.price === lowestPrice }">
+              {{ buy.vendor.name === 'Flea Market' ? 'Flea' : buy.vendor.name }}: {{ buy.currency }} {{ buy.price | number }}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

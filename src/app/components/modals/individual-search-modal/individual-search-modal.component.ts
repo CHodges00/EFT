@@ -12,14 +12,22 @@ import moment from 'moment-timezone';
 export class IndividualSearchModal {
   item!: InspectItem;
   highestPrice!: number;
+  lowestPrice!: number;
+  isMoneyMaker: boolean = false;
+  usedInTasks: boolean = false;;
 
   constructor(
     public dialogRef: MatDialogRef<IndividualSearchModal>,
     @Inject(MAT_DIALOG_DATA) public data: InspectItemResponse
   ) {
-    if(data){
+    if (data) {
       this.item = data.items[0];
+      if(this.item.usedInTasks.length > 0){
+        this.usedInTasks = true;
+      }
       this.highestPrice = Math.max(...this.item.sellFor.map(sell => sell.price));
+      this.lowestPrice = Math.min(...this.item.buyFor.map(buy => buy.price));
+      this.checkIfMoneyMaker();
     }
   }
 
@@ -43,6 +51,16 @@ export class IndividualSearchModal {
       return 'yellow-text';
     } else {
       return 'red-text';
+    }
+  }
+
+  checkIfMoneyMaker(): void {
+    const isHigherSellPrice = this.item.sellFor.some(sell => {
+      return sell.price > (this.lowestPrice - 250) && sell.vendor.name !== 'Flea Market';
+    });
+
+    if (isHigherSellPrice) {
+      this.isMoneyMaker = true;
     }
   }
 

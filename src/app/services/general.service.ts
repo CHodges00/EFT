@@ -51,10 +51,18 @@ export class GeneralService {
     });
   }
 
-  inspectItemQuery(search:string){
+  inspectItemQuery(search: string) {
+    // Function to escape quotes within the search string
+    const escapeQuotes = (str: string) => {
+      return str.replace(/"/g, '\\"');
+    };
+
+    // Escape quotes within the search string
+    const sanitizedSearch = escapeQuotes(search);
+
     return this.apollo.watchQuery({
       query: gql`{
-        items(name: "${search}") {
+        items(name: "${sanitizedSearch}") {
           name
           inspectImageLink
           usedInTasks {
@@ -67,6 +75,13 @@ export class GeneralService {
           avg24hPrice
           updated
           changeLast48h
+          buyFor {
+            vendor {
+              name
+            }
+            currency
+            price
+          }
           sellFor {
             vendor {
               name
@@ -76,8 +91,9 @@ export class GeneralService {
           }
         }
       }`
-    })
+    });
   }
+
 
 
 }
