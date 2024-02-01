@@ -2,71 +2,169 @@
   <h1>Welcome to the Tarkov App!</h1>
 
   <div class="important-note">
-    <p class="important-note">QUICK NOTE: This application is in a testing stage. Features may change or be removed at any time. Your feedback is highly valued! Please send any suggestion or issues to <span class="highlight">hodges.cody00&#64;gmail.com</span></p>
-    <p># The application is not currently responsive (Will likely cause visual/functional issues on vertical screens, smaller screens, mobile devices)</p>
+    <p class="important-note">
+      QUICK NOTE: This application is in a testing stage. Features may change or
+      be removed at any time. Your feedback is highly valued! Please send any
+      suggestion or issues to
+      <span class="highlight">tarkovapp&#64;gmail.com</span>
+    </p>
+    <p>
+      # The application is not currently responsive (Will likely cause
+      visual/functional issues on vertical screens, smaller screens, mobile
+      devices)
+    </p>
   </div>
 
-  <p>Scrolling items represent the current top priced items for sale and their change within the last 48 hours:</p>
+  <p>
+    Scrolling items represent the current top priced items for sale and their
+    change within the last 48 hours:
+  </p>
   <ul>
-    <li><span class="highlight text-danger">Red Text</span> applies to negative changes in price in the last 48 hours</li>
-    <li><span class="highlight text-success">Green Text</span> applies to positive changes in price in the last 48 hours</li>
+    <li>
+      <span class="highlight text-danger">Red Text</span> applies to negative
+      changes in price in the last 48 hours
+    </li>
+    <li>
+      <span class="highlight text-success">Green Text</span> applies to positive
+      changes in price in the last 48 hours
+    </li>
   </ul>
 
   <p>If you scroll down:</p>
   <ul>
-    <li>Server statuses are shown in the bottom left under "<span class="highlight">Server Statuses</span>":</li>
+    <li>
+      Server statuses are shown in the bottom left under "<span
+        class="highlight"
+        >Server Statuses</span
+      >":
+    </li>
     <ul>
-      <li>A <span class="highlight text-success">green border</span> represents no status issues with that current service</li>
-      <li>A <span class="highlight text-danger">red border</span> represents a current status issue with that current service</li>
+      <li>
+        A <span class="highlight text-success">green border</span> represents no
+        status issues with that current service
+      </li>
+      <li>
+        A <span class="highlight text-danger">red border</span> represents a
+        current status issue with that current service
+      </li>
     </ul>
-    <li>"<span class="highlight">PMC Counts</span>" shows all available maps and the number of PMCs that can spawn into a raid on the given map</li>
+    <li>
+      "<span class="highlight">PMC Counts</span>" shows all available maps and
+      the number of PMCs that can spawn into a raid on the given map
+    </li>
   </ul>
 
   <h2>The home screen consists of one action item (search bar):</h2>
   <ul>
     <li>Enter a search term into this box and press enter</li>
     <li>You will be given a popup modal including the results</li>
-    <li>At any time, you can exit this modal and start over by simply clicking outside of the modal</li>
+    <li>
+      At any time, you can exit this modal and start over by simply clicking
+      outside of the modal
+    </li>
     <li>This modal will be scrollable if the results include multiple items</li>
-    <li><span class="highlight">If no items are shown in the modal</span> (Click outside of the modal to close it and perform another search)</li>
-    <li>Once you have located your item within the results, simply clicking (or hovering and pressing "Enter") will open the final modal containing specific information for the chosen item:</li>
+    <li>
+      <span class="highlight">If no items are shown in the modal</span> (Click
+      outside of the modal to close it and perform another search)
+    </li>
+    <li>
+      Once you have located your item within the results, simply clicking (or
+      hovering and pressing "Enter") will open the final modal containing
+      specific information for the chosen item:
+    </li>
     <ul>
       <li>The name of the selected item is at the top</li>
-      <li>"Last Updated:" is the time all of the shown information was updated within Tarkov's API ("How recent are the numbers")</li>
+      <li>
+        "Last Updated:" is the time all of the shown information was updated
+        within Tarkov's API ("How recent are the numbers")
+      </li>
       <ul>
-        <li>If the text is <span class="highlight text-success">green</span> (item has been updated within the last 30 minutes)</li>
-        <li>If the text is <span class="highlight text-warning">yellow</span> (item has been updated within 30 min-1hr)</li>
-        <li>If the text is <span class="highlight text-danger">red</span> (item information is more than an hour old) (items that can't be sold on Flea aren't updated as often)</li>
+        <li>
+          If the text is <span class="highlight text-success">green</span> (item
+          has been updated within the last 30 minutes)
+        </li>
+        <li>
+          If the text is
+          <span class="highlight text-warning">yellow</span> (item has been
+          updated within 30 min-1hr)
+        </li>
+        <li>
+          If the text is <span class="highlight text-danger">red</span> (item
+          information is more than an hour old) (items that can't be sold on
+          Flea aren't updated as often)
+        </li>
       </ul>
-      <li>"Avg 24hr Price:" average listing price on the Flea for the last 24 hours</li>
-      <li>"Last 48hr Change:" change in listing prices on the Flea in the last 48 hours</li>
+      <li>
+        "Avg 24hr Price:" average listing price on the Flea for the last 24
+        hours
+      </li>
+      <li>
+        "Last 48hr Change:" change in listing prices on the Flea in the last 48
+        hours
+      </li>
       <ul>
-        <li>If the text is <span class="highlight text-success">green</span> (prices have risen in the last 48 hours)</li>
-        <li>If the text is <span class="highlight text-danger">red</span> (prices have dropped in the last 48 hours)</li>
+        <li>
+          If the text is
+          <span class="highlight text-success">green</span> (prices have risen
+          in the last 48 hours)
+        </li>
+        <li>
+          If the text is <span class="highlight text-danger">red</span> (prices
+          have dropped in the last 48 hours)
+        </li>
       </ul>
     </ul>
   </ul>
 
   <h2>"Need For Tasks":</h2>
   <ul>
-    <li>If color of the text is <span class="highlight text-success">green</span>, the item is needed for a task</li>
-    <li>If multiple tasks are listed, the container will be scrollable for viewing</li>
-    <li>The Task card will show Trader/Task Name/Minimum Required Level for the tasks (Might be able to track which quests the user has already completed in the future)</li>
+    <li>
+      If color of the text is <span class="highlight text-success">green</span>,
+      the item is needed for a task
+    </li>
+    <li>
+      If multiple tasks are listed, the container will be scrollable for viewing
+    </li>
+    <li>
+      The Task card will show Trader/Task Name/Minimum Required Level for the
+      tasks (Might be able to track which quests the user has already completed
+      in the future)
+    </li>
   </ul>
 
   <p>Next will be an image of the item that you are inspecting</p>
 
   <h2>Sell Prices:</h2>
-  <p>List all prices that a trader will pay for the item and the cost of that item on the Flea at the time the card was updated ("Last Updated:")</p>
+  <p>
+    List all prices that a trader will pay for the item and the cost of that
+    item on the Flea at the time the card was updated ("Last Updated:")
+  </p>
   <ul>
-    <li>If the text is <span class="highlight text-success text-bold">green and bold</span> (That is the best option for selling the item) (AT UPDATED TIME)</li>
+    <li>
+      If the text is
+      <span class="highlight text-success text-bold">green and bold</span> (That
+      is the best option for selling the item) (AT UPDATED TIME)
+    </li>
   </ul>
 
   <h2>Buy Prices:</h2>
-  <p>List all places you can purchase the item and its cost (Flea price will be the cost of that item on the Flea at the time the card was updated ("Last Updated:"))</p>
+  <p>
+    List all places you can purchase the item and its cost (Flea price will be
+    the cost of that item on the Flea at the time the card was updated ("Last
+    Updated:"))
+  </p>
   <ul>
-    <li>If the text is <span class="highlight text-success">green</span> (That is the best option for purchasing the item) (AT UPDATED TIME)</li>
+    <li>
+      If the text is <span class="highlight text-success">green</span> (That is
+      the best option for purchasing the item) (AT UPDATED TIME)
+    </li>
   </ul>
 
-  <p>If the item can be purchased from anywhere and sold back to a trader for no more than a RUB 500 loss, the card will have a "<span class="highlight">QUICK MONEY MAKER</span>" animation above the image. (These items will likely be able to be purchased on the Flea and sold to traders for a profit)</p>
+  <p>
+    If the item can be purchased from anywhere and sold back to a trader for no
+    more than a RUB 500 loss, the card will have a "<span class="highlight"
+      >QUICK MONEY MAKER</span
+    >" animation above the image. (These items will likely be able to be
+    purchased on the Flea and sold to traders for a profit)
+  </p>
 </div>
